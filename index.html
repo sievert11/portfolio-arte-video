@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio | Daniel Sievert - Criação Audiovisual</title>
+
+  <!-- Google Fonts: Fira Sans (Títulos) & Roboto (Texto) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    /* -------------------------------------------------------------
+       1. NORD PALETTE & VARIÁVEIS
+       ------------------------------------------------------------- */
+    :root {
+      /* Polar Night */
+      --nord0: #2e3440;
+      --nord1: #3b4252;
+      --nord2: #434c5e;
+      --nord3: #4c566a;
+      
+      /* Snow Storm */
+      --nord4: #d8dee9;
+      --nord5: #e5e9f0;
+      --nord6: #eceff4;
+      
+      /* Frost */
+      --nord7: #8fbcbb;
+      --nord8: #88c0d0;
+      --nord9: #81a1c1;
+      --nord10: #5e81ac;
+
+      /* Aurora */
+      --nord14: #a3be8c; /* Verde para destaques / WhatsApp */
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--nord0);
+      color: var(--nord4);
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Container Centralizado - Máximo 650px */
+    .site-wrapper {
+      max-width: 650px;
+      margin: 0 auto;
+      padding: 60px 20px 80px 20px;
+      text-align: center;
+    }
+
+    /* -------------------------------------------------------------
+       2. TIPOGRAFIA & CABEÇALHO
+       ------------------------------------------------------------- */
+    h1, h2, h3, .nav-link {
+      font-family: 'Fira Sans', sans-serif;
+      text-align: center;
+    }
+
+    header {
+      margin-bottom: 40px;
+    }
+
+    h1.title {
+      color: var(--nord6);
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 6px;
+    }
+
+    .subtitle {
+      color: var(--nord8);
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 400;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      opacity: 0.9;
+    }
+
+    /* Botão do WhatsApp (Estilo Zen com SVG) */
+    .whatsapp-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background-color: rgba(163, 190, 140, 0.12);
+      color: var(--nord14);
+      border: 1px solid rgba(163, 190, 140, 0.3);
+      padding: 10px 22px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-family: 'Roboto', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: all 0.25s ease;
+      margin: 10px 0;
+    }
+
+    .whatsapp-link:hover {
+      background-color: var(--nord14);
+      color: var(--nord0);
+      border-color: var(--nord14);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(163, 190, 140, 0.2);
+    }
+
+    .whatsapp-icon {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
+
+    /* -------------------------------------------------------------
+       3. NAVEGAÇÃO DE ÂNCORAS
+       ------------------------------------------------------------- */
+    nav.anchor-nav {
+      background: var(--nord1);
+      border: 1px solid var(--nord2);
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 60px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      text-align: center;
+    }
+
+    .anchor-nav a {
+      color: var(--nord9);
+      text-decoration: none;
+      font-family: 'Fira Sans', sans-serif;
+      font-size: 0.98rem;
+      font-weight: 500;
+      padding: 6px 12px;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+    }
+
+    .anchor-nav a:hover {
+      color: var(--nord6);
+      background-color: var(--nord2);
+    }
+
+    /* -------------------------------------------------------------
+       4. SEÇÕES & CONTEÚDO ANCORADO
+       ------------------------------------------------------------- */
+    section.portfolio-section {
+      margin-bottom: 70px;
+      text-align: center;
+    }
+
+    section.portfolio-section h2 {
+      color: var(--nord5);
+      font-size: 1.35rem;
+      font-weight: 600;
+      margin-bottom: 28px;
+      position: relative;
+      padding-bottom: 12px;
+    }
+
+    /* Linha decorativa minimalista sob os títulos */
+    section.portfolio-section h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40px;
+      height: 2px;
+      background-color: var(--nord3);
+      border-radius: 2px;
+    }
+
+    /* -------------------------------------------------------------
+       5. GRID DE VÍDEOS (YOUTUBE SHORTS - 9:16)
+       ------------------------------------------------------------- */
+    .shorts-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    @media (max-width: 520px) {
+      .shorts-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .short-card {
+      position: relative;
+      width: 100%;
+      padding-top: 177.77%; /* Proporção 9:16 */
+      background-color: var(--nord1);
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--nord2);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .short-card iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* -------------------------------------------------------------
+       6. CARROSSEL DE FOTOS ESTILO INSTAGRAM
+       ------------------------------------------------------------- */
+    .insta-carousel {
+      position: relative;
+      width: 100%;
+      background-color: var(--nord1);
+      border-radius: 16px;
+      border: 1px solid var(--nord2);
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      user-select: none;
+    }
+
+    .carousel-stage {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1 / 1; /* Proporção quadrada do Instagram */
+      background-color: var(--nord0);
+      overflow: hidden;
+    }
+
+    .carousel-track {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .carousel-slide {
+      min-width: 100%;
+      height: 100%;
+      position: relative;
+    }
+
+    .carousel-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Botões de Navegação Overlay */
+    .nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 36px;
+      height: 36px;
+      background-color: rgba(46, 52, 64, 0.75);
+      color: var(--nord6);
+      border: 1px solid rgba(216, 222, 233, 0.2);
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+      z-index: 10;
+      backdrop-filter: blur(4px);
+    }
+
+    .nav-btn:hover {
+      background-color: var(--nord8);
+      color: var(--nord0);
+    }
+
+    .nav-btn.prev { left: 12px; }
+    .nav-btn.next { right: 12px; }
+
+    .nav-btn:disabled {
+      opacity: 0;
+      cursor: default;
+      pointer-events: none;
+    }
+
+    /* Indicador de Páginas (Dots e Contador) */
+    .carousel-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 18px;
+      background-color: var(--nord1);
+      border-top: 1px solid rgba(67, 76, 94, 0.5);
+    }
+
+    .carousel-dots {
+      display: flex;
+      gap: 6px;
+    }
+
+    .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: var(--nord3);
+      transition: all 0.25s ease;
+    }
+
+    .dot.active {
+      background-color: var(--nord8);
+      transform: scale(1.3);
+    }
+
+    .carousel-counter {
+      font-size: 0.8rem;
+      color: var(--nord4);
+      opacity: 0.8;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    /* -------------------------------------------------------------
+       7. RODAPÉ
+       ------------------------------------------------------------- */
+    footer {
+      margin-top: 80px;
+      padding-top: 30px;
+      border-top: 1px solid var(--nord2);
+    }
+
+    .copyright {
+      font-size: 0.82rem;
+      color: var(--nord3);
+      margin-top: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="site-wrapper">
+
+    <!-- CABEÇALHO DO PORTFÓLIO -->
+    <header>
+      <h1 class="title">Portfólio Daniel Sievert</h1>
+      <div class="subtitle">criação audiovisual</div>
+      
+      <!-- Link de WhatsApp com mensagem pré-definida -->
+      <a href="https://wa.me/5500000000000?text=Ol%C3%A1%20Daniel,%20vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar!" 
+         class="whatsapp-link" 
+         target="_blank" 
+         rel="noopener noreferrer">
+        <svg class="whatsapp-icon" viewBox="0 0 24 24">
+          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+        </svg>
+        <span>WhatsApp</span>
+      </a>
+    </header>
+
+    <!-- NAVEGAÇÃO INTERNA POR ÂNCORAS -->
+    <nav class="anchor-nav">
+      <a href="#ia-videos">Vídeos totalmente criados com IA</a>
+      <a href="#client-videos">Vídeos captados e editados para redes sociais</a>
+      <a href="#insta-photo">Fotografia para postagens no Instagram</a>
+      <a href="#ads-photo">Fotografia para campanhas e publicidade</a>
+    </nav>
+
+    <main>
+      <!-- ÂNCORA 1: VÍDEOS IA -->
+      <section id="ia-videos" class="portfolio-section">
+        <h2>Vídeos totalmente criados com IA</h2>
+        <div class="shorts-grid">
+          <!-- Substitua 'VIDEO_ID' pelo código do YouTube Shorts -->
+          <div class="short-card">
+            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Short IA 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="short-card">
+            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Short IA 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+           <div class="short-card">
+            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Short IA 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+           <div class="short-card">
+            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Short IA 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+      </section>
+
+      <!-- ÂNCORA 2: VÍDEOS REDES SOCIAIS -->
+      <section id="client-videos" class="portfolio-section">
+        <h2>Vídeos captados e editados para redes sociais</h2>
+        <div class="shorts-grid">
+          <div class="short-card">
+            <iframe src="https://www.youtube.com/embed/NJ3ei5t1gro" title="Short/Reel - Looks para cada ocasião" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="short-card">
+            <iframe src="https://www.youtube.com/embed/fRjfyu3sQcI" title="Short/ Reel - Chamada para site" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="short-card">
+            <iframe src="https://www.youtube.com/embed/hZIB4q-HQNU" title="Short/ Reel - Diferenciais Moissanite" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="short-card">
+            <iframe src="https://www.youtube.com/embed/Qgj9jukF16g" title="Short/ Reel - Fotografia editorial e montagem em vídeo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+      </section>
+
+      <!-- ÂNCORA 3: FOTOGRAFIA INSTAGRAM -->
+      <section id="insta-photo" class="portfolio-section">
+        <h2>Fotografia para postagens no Instagram</h2>
+        
+        <div class="insta-carousel" id="carousel-instagram">
+          <div class="carousel-stage">
+            <button class="nav-btn prev" aria-label="Foto anterior">&#10094;</button>
+            <button class="nav-btn next" aria-label="Próxima foto">&#10095;</button>
+            
+            <div class="carousel-track">
+              <!-- Insira aqui os links das suas fotos do Instagram -->
+              <div class="carousel-slide"><img src="https://picsum.photos/650/650?random=10" alt="Insta Photo 1"></div>
+              <div class="carousel-slide"><img src="https://picsum.photos/650/650?random=11" alt="Insta Photo 2"></div>
+              <div class="carousel-slide"><img src="https://picsum.photos/650/650?random=12" alt="Insta Photo 3"></div>
+            </div>
+          </div>
+          
+          <div class="carousel-footer">
+            <div class="carousel-dots"></div>
+            <div class="carousel-counter">1 / 3</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ÂNCORA 4: FOTOGRAFIA PUBLICIDADE -->
+      <section id="ads-photo" class="portfolio-section">
+        <h2>Fotografia para campanhas e publicidade</h2>
+        
+        <div class="insta-carousel" id="carousel-ads">
+          <div class="carousel-stage">
+            <button class="nav-btn prev" aria-label="Foto anterior">&#10094;</button>
+            <button class="nav-btn next" aria-label="Próxima foto">&#10095;</button>
+            
+            <div class="carousel-track">
+              <!-- Insira aqui os links das fotos de campanhas -->
+              <div class="carousel-slide"><img src="https://picsum.photos/650/650?random=20" alt="Campanha Photo 1"></div>
+              <div class="carousel-slide"><img src="https://picsum.photos/650/650?random=21" alt="Campanha Photo 2"></div>
+              <div class="carousel-slide"><img src="https://picsum.photos/650/650?random=22" alt="Campanha Photo 3"></div>
+              <div class="carousel-slide"><img src="https://picsum.photos/650/650?random=23" alt="Campanha Photo 4"></div>
+            </div>
+          </div>
+          
+          <div class="carousel-footer">
+            <div class="carousel-dots"></div>
+            <div class="carousel-counter">1 / 4</div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer>
+      <a href="https://wa.me/5500000000000?text=Ol%C3%A1%20Daniel,%20vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar!" 
+         class="whatsapp-link" 
+         target="_blank" 
+         rel="noopener noreferrer">
+        <svg class="whatsapp-icon" viewBox="0 0 24 24">
+          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+        </svg>
+        <span>WhatsApp</span>
+      </a>
+      
+      <p class="copyright">&copy; Daniel Sievert — Criação Audiovisual. Todos os direitos reservados.</p>
+    </footer>
+
+  </div>
+
+  <!-- SCRIPT MODULAR DO CARROSSEL DE FOTOS -->
+  <script>
+    class InstaCarousel {
+      constructor(container) {
+        this.container = container;
+        this.track = container.querySelector('.carousel-track');
+        this.slides = container.querySelectorAll('.carousel-slide');
+        this.prevBtn = container.querySelector('.nav-btn.prev');
+        this.nextBtn = container.querySelector('.nav-btn.next');
+        this.dotsContainer = container.querySelector('.carousel-dots');
+        this.counter = container.querySelector('.carousel-counter');
+        
+        this.currentIndex = 0;
+        this.totalSlides = this.slides.length;
+        this.startX = 0;
+        this.currentTranslate = 0;
+        this.prevTranslate = 0;
+        this.isDragging = false;
+
+        this.init();
+      }
+
+      init() {
+        this.buildDots();
+        this.update();
+
+        this.prevBtn.addEventListener('click', () => this.prev());
+        this.nextBtn.addEventListener('click', () => this.next());
+
+        // Suporte para Gestos Touch (Mobile Swipe)
+        const stage = this.container.querySelector('.carousel-stage');
+        stage.addEventListener('touchstart', (e) => this.touchStart(e), { passive: true });
+        stage.addEventListener('touchmove', (e) => this.touchMove(e), { passive: true });
+        stage.addEventListener('touchend', () => this.touchEnd());
+      }
+
+      buildDots() {
+        this.dotsContainer.innerHTML = '';
+        for (let i = 0; i < this.totalSlides; i++) {
+          const dot = document.createElement('div');
+          dot.classList.add('dot');
+          if (i === 0) dot.classList.add('active');
+          dot.addEventListener('click', () => this.goTo(i));
+          this.dotsContainer.appendChild(dot);
+        }
+      }
+
+      update() {
+        this.track.style.transform = `translateX(-${this.currentIndex * 100}%)`;
+        
+        // Atualizar Botões
+        this.prevBtn.disabled = this.currentIndex === 0;
+        this.nextBtn.disabled = this.currentIndex === this.totalSlides - 1;
+
+        // Atualizar Dots
+        const dots = this.dotsContainer.querySelectorAll('.dot');
+        dots.forEach((dot, index) => {
+          dot.classList.toggle('active', index === this.currentIndex);
+        });
+
+        // Atualizar Contador
+        this.counter.textContent = `${this.currentIndex + 1} / ${this.totalSlides}`;
+      }
+
+      next() {
+        if (this.currentIndex < this.totalSlides - 1) {
+          this.currentIndex++;
+          this.update();
+        }
+      }
+
+      prev() {
+        if (this.currentIndex > 0) {
+          this.currentIndex--;
+          this.update();
+        }
+      }
+
+      goTo(index) {
+        this.currentIndex = index;
+        this.update();
+      }
+
+      touchStart(e) {
+        this.startX = e.touches[0].clientX;
+        this.isDragging = true;
+      }
+
+      touchMove(e) {
+        if (!this.isDragging) return;
+        const currentX = e.touches[0].clientX;
+        const diff = currentX - this.startX;
+        if (Math.abs(diff) > 50) {
+          if (diff < 0) this.next();
+          else this.prev();
+          this.isDragging = false;
+        }
+      }
+
+      touchEnd() {
+        this.isDragging = false;
+      }
+    }
+
+    // Inicializar todos os carrosséis da página
+    document.querySelectorAll('.insta-carousel').forEach(carouselEl => {
+      new InstaCarousel(carouselEl);
+    });
+  </script>
+</body>
+</html>
