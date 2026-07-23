@@ -1,0 +1,8 @@
+# Arquivos de configuração locais
+config.js
+*.env
+.env
+
+# Node / outros (se aplicável)
+node_modules/
+.DS_Store

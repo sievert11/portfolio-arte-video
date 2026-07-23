@@ -510,7 +510,11 @@
     }
 
     async function loadPlaylistVideos(container, sectionKey, fallbackVideos = [], playlistId = '') {
-      const apiKey = window.YOUTUBE_API_KEY || 'AIzaSyAhWe_8LFR1PTkHrAkFmlC7DzMS5uCTzo8';
+      // A chave deve ser fornecida via `window.YOUTUBE_API_KEY` (ex: um arquivo `config.js`).
+      // Não deixe chaves sensíveis hard-coded no código fonte.
+      const apiKey = window.YOUTUBE_API_KEY || '';
+
+      if (!apiKey) console.warn('YouTube API key not set; usando fallback local (data/videos.json).');
 
       if (apiKey && playlistId) {
         try {
@@ -533,7 +537,33 @@
             return;
           }
         } catch (error) {
-          console.warn('Não foi possível carregar a playlist via YouTube Data API:', error);
+          console.warn('Não foi possível carregar a playlist via YouTube Data API (cliente):', error);
+        }
+      }
+
+      // Se não houver chave cliente, tente o proxy do servidor (mesma origem):
+      if (playlistId) {
+        try {
+          const proxyUrl = `/api/playlistItems?playlistId=${encodeURIComponent(playlistId)}&maxResults=20`;
+          const response = await fetch(proxyUrl, { cache: 'no-store' });
+          if (response && response.ok) {
+            const data = await response.json();
+            const videos = (data.items || [])
+              .map((item) => {
+                const snippet = item.snippet || {};
+                const videoId = snippet.resourceId?.videoId || '';
+                const title = snippet.title || 'Vídeo';
+                return videoId ? { id: videoId, title } : null;
+              })
+              .filter(Boolean);
+
+            if (videos.length) {
+              renderVideoGrid(container, videos);
+              return;
+            }
+          }
+        } catch (error) {
+          console.warn('Não foi possível carregar a playlist via proxy do servidor:', error);
         }
       }
 
