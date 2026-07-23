@@ -451,6 +451,7 @@
   <script>
     const videoPlaylists = [
       {
+        key: 'ia-videos',
         selector: '[data-video-section="ia-videos"]',
         playlistId: 'PLU-9-ADIACSk',
         fallbackVideos: [
@@ -460,6 +461,7 @@
         ]
       },
       {
+        key: 'client-videos',
         selector: '[data-video-section="client-videos"]',
         playlistId: 'PLdlVx0DQvv9E',
         fallbackVideos: [
@@ -507,40 +509,45 @@
       container.innerHTML = videos.map(createVideoCard).join('');
     }
 
-    async function loadPlaylistVideos(container, playlistId, fallbackVideos = []) {
-      if (!playlistId || playlistId.includes('YOUR')) {
-        renderVideoGrid(container, fallbackVideos);
-        return;
-      }
+    async function loadPlaylistVideos(container, sectionKey, fallbackVideos = [], playlistId = '') {
+      const apiKey = window.YOUTUBE_API_KEY || 'AIzaSyAhWe_8LFR1PTkHrAkFmlC7DzMS5uCTzo8';
 
-      const feedUrl = `https://www.youtube.com/feeds/videos.xml?playlist_id=${encodeURIComponent(playlistId)}`;
+      if (apiKey && playlistId) {
+        try {
+          const apiUrl = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${encodeURIComponent(playlistId)}&maxResults=20&key=${encodeURIComponent(apiKey)}`;
+          const response = await fetch(apiUrl, { cache: 'no-store' });
+          if (!response.ok) throw new Error(`HTTP ${response.status}`);
+
+          const data = await response.json();
+          const videos = (data.items || [])
+            .map((item) => {
+              const snippet = item.snippet || {};
+              const videoId = snippet.resourceId?.videoId || '';
+              const title = snippet.title || 'Vídeo';
+              return videoId ? { id: videoId, title } : null;
+            })
+            .filter(Boolean);
+
+          if (videos.length) {
+            renderVideoGrid(container, videos);
+            return;
+          }
+        } catch (error) {
+          console.warn('Não foi possível carregar a playlist via YouTube Data API:', error);
+        }
+      }
 
       try {
-        const response = await fetch(feedUrl, { mode: 'cors' });
+        const response = await fetch('./data/videos.json', { cache: 'no-store' });
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
 
-        const xml = await response.text();
-        const entryMatches = [...xml.matchAll(/<entry>([\s\S]*?)<\/entry>/g)];
-        const videos = entryMatches
-          .map((match) => {
-            const entryXml = match[1];
-            const id = entryXml.match(/<yt:videoId>([^<]+)<\/yt:videoId>/)?.[1] || '';
-            const title = entryXml.match(/<title>([\s\S]*?)<\/title>/)?.[1]
-              .replace(/<!\[CDATA\[|\]\]>/g, '')
-              .trim() || '';
-            return id ? { id, title } : null;
-          })
-          .filter(Boolean);
-
-        if (videos.length) {
-          renderVideoGrid(container, videos);
-          return;
-        }
+        const data = await response.json();
+        const videos = data[sectionKey]?.videos || [];
+        renderVideoGrid(container, videos.length ? videos : fallbackVideos);
       } catch (error) {
-        console.warn('Não foi possível carregar a playlist do YouTube:', error);
+        console.warn('Não foi possível carregar os vídeos do arquivo de dados:', error);
+        renderVideoGrid(container, fallbackVideos);
       }
-
-      renderVideoGrid(container, fallbackVideos);
     }
 
     class InstaCarousel {
@@ -641,14 +648,10 @@
     }
 
     document.addEventListener('DOMContentLoaded', () => {
-      videoPlaylists.forEach(({ selector, playlistId, fallbackVideos }) => {
+      videoPlaylists.forEach(({ key, selector, playlistId, fallbackVideos }) => {
         const container = document.querySelector(selector);
         if (container) {
-          loadPlaylistVideos(container, playlistId, fallbackVideos);
-
-          setInterval(() => {
-            loadPlaylistVideos(container, playlistId, fallbackVideos);
-          }, 600000);
+          loadPlaylistVideos(container, key, fallbackVideos, playlistId);
         }
       });
 
