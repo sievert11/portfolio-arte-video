@@ -1,16 +1,70 @@
 {
   "ia-videos": {
     "videos": [
-      { "id": "ZLSQ7WcSS_0", "title": "Short IA - Aviso do Coelho da Páscoa" },
-      { "id": "OSU4SCF6I5Y", "title": "Short IA - Convite para tomar um café" },
-      { "id": "HRztoiOOJ7A", "title": "Short IA - Acesse o Site" }
+      {
+        "id": "HRztoiOOJ7A",
+        "title": "Chamada para site - IA"
+      },
+      {
+        "id": "OSU4SCF6I5Y",
+        "title": "Convite para Stories"
+      },
+      {
+        "id": "ZLSQ7WcSS_0",
+        "title": "Coelho da páscoa - mensagem para criança"
+      }
     ]
   },
   "client-videos": {
     "videos": [
-      { "id": "NJ3ei5t1gro", "title": "Short/Reel - Looks para cada ocasião" },
-      { "id": "fRjfyu3sQcI", "title": "Short/Reel - Chamada para site" },
-      { "id": "hZIB4q-HQNU", "title": "Short/Reel - Diferenciais Moissanite" }
+      {
+        "id": "TCecm7agLNc",
+        "title": "stories gravados em estúdio"
+      },
+      {
+        "id": "Qgj9jukF16g",
+        "title": "Vídeo montagem de fotos"
+      },
+      {
+        "id": "fRjfyu3sQcI",
+        "title": "Clipe - Chamada para Site"
+      },
+      {
+        "id": "hZIB4q-HQNU",
+        "title": "Vídeo sobre Moissanite - empresarial informativo"
+      },
+      {
+        "id": "uSJFOGD3guc",
+        "title": "Campanha Verão Bolsas"
+      },
+      {
+        "id": "2uBJNKZT8n0",
+        "title": "Captação Peças de Designer"
+      },
+      {
+        "id": "QYqVfD3te5U",
+        "title": "Imagens - Coleção de Semijoias"
+      },
+      {
+        "id": "1Zphc8A3W6I",
+        "title": "Imagens para coleçaõ semijoia em Prata 925"
+      },
+      {
+        "id": "cMha9T7Lac4",
+        "title": "promocional Dia dos Namorados"
+      },
+      {
+        "id": "nxTBFtSrEMM",
+        "title": "Dia da Avó"
+      },
+      {
+        "id": "BQEx0yQWyWE",
+        "title": "Minha Páscoa - Semijoias"
+      },
+      {
+        "id": "zUh3_bxlads",
+        "title": "Campanha Moissanite"
+      }
     ]
   }
 }
