@@ -1,3 +1,776 @@
 {
-  "photoCarousels": []
+  "photoCarousels": [
+    {
+      "section": "campanhas",
+      "title": "Campanhas",
+      "carousels": [
+        {
+          "key": "1-campanha-coleção-bolsas",
+          "title": "1 Campanha ColeçãO Bolsas",
+          "images": [
+            {
+              "src": "fotos/campanhas/1-campanha-coleção-bolsas/1.webp",
+              "alt": "1 campanha coleção bolsas 1"
+            },
+            {
+              "src": "fotos/campanhas/1-campanha-coleção-bolsas/2.webp",
+              "alt": "1 campanha coleção bolsas 2"
+            },
+            {
+              "src": "fotos/campanhas/1-campanha-coleção-bolsas/3.webp",
+              "alt": "1 campanha coleção bolsas 3"
+            },
+            {
+              "src": "fotos/campanhas/1-campanha-coleção-bolsas/4.webp",
+              "alt": "1 campanha coleção bolsas 4"
+            },
+            {
+              "src": "fotos/campanhas/1-campanha-coleção-bolsas/5.webp",
+              "alt": "1 campanha coleção bolsas 5"
+            },
+            {
+              "src": "fotos/campanhas/1-campanha-coleção-bolsas/6.webp",
+              "alt": "1 campanha coleção bolsas 6"
+            }
+          ]
+        },
+        {
+          "key": "2-campanha-inverno-2",
+          "title": "2 Campanha Inverno 2",
+          "images": [
+            {
+              "src": "fotos/campanhas/2-campanha-inverno-2/1.webp",
+              "alt": "2 campanha inverno 2 1"
+            },
+            {
+              "src": "fotos/campanhas/2-campanha-inverno-2/2.webp",
+              "alt": "2 campanha inverno 2 2"
+            },
+            {
+              "src": "fotos/campanhas/2-campanha-inverno-2/3.webp",
+              "alt": "2 campanha inverno 2 3"
+            },
+            {
+              "src": "fotos/campanhas/2-campanha-inverno-2/4.webp",
+              "alt": "2 campanha inverno 2 4"
+            },
+            {
+              "src": "fotos/campanhas/2-campanha-inverno-2/5.webp",
+              "alt": "2 campanha inverno 2 5"
+            },
+            {
+              "src": "fotos/campanhas/2-campanha-inverno-2/6.webp",
+              "alt": "2 campanha inverno 2 6"
+            },
+            {
+              "src": "fotos/campanhas/2-campanha-inverno-2/7.webp",
+              "alt": "2 campanha inverno 2 7"
+            }
+          ]
+        },
+        {
+          "key": "3 - campanha-inverno1",
+          "title": "3 Campanha Inverno1",
+          "images": [
+            {
+              "src": "fotos/campanhas/3 - campanha-inverno1/1.webp",
+              "alt": "3   campanha inverno1 1"
+            },
+            {
+              "src": "fotos/campanhas/3 - campanha-inverno1/2.webp",
+              "alt": "3   campanha inverno1 2"
+            },
+            {
+              "src": "fotos/campanhas/3 - campanha-inverno1/3.webp",
+              "alt": "3   campanha inverno1 3"
+            },
+            {
+              "src": "fotos/campanhas/3 - campanha-inverno1/4.webp",
+              "alt": "3   campanha inverno1 4"
+            },
+            {
+              "src": "fotos/campanhas/3 - campanha-inverno1/5.webp",
+              "alt": "3   campanha inverno1 5"
+            },
+            {
+              "src": "fotos/campanhas/3 - campanha-inverno1/6.webp",
+              "alt": "3   campanha inverno1 6"
+            }
+          ]
+        },
+        {
+          "key": "campanha-semijoia",
+          "title": "Campanha Semijoia",
+          "images": [
+            {
+              "src": "fotos/campanhas/campanha-semijoia/1.webp",
+              "alt": "campanha semijoia 1"
+            },
+            {
+              "src": "fotos/campanhas/campanha-semijoia/2.webp",
+              "alt": "campanha semijoia 2"
+            },
+            {
+              "src": "fotos/campanhas/campanha-semijoia/3.webp",
+              "alt": "campanha semijoia 3"
+            },
+            {
+              "src": "fotos/campanhas/campanha-semijoia/4.webp",
+              "alt": "campanha semijoia 4"
+            },
+            {
+              "src": "fotos/campanhas/campanha-semijoia/5.webp",
+              "alt": "campanha semijoia 5"
+            }
+          ]
+        },
+        {
+          "key": "campanha-semijoia1",
+          "title": "Campanha Semijoia1",
+          "images": [
+            {
+              "src": "fotos/campanhas/campanha-semijoia1/1.webp",
+              "alt": "campanha semijoia1 1"
+            },
+            {
+              "src": "fotos/campanhas/campanha-semijoia1/2.webp",
+              "alt": "campanha semijoia1 2"
+            },
+            {
+              "src": "fotos/campanhas/campanha-semijoia1/3.webp",
+              "alt": "campanha semijoia1 3"
+            },
+            {
+              "src": "fotos/campanhas/campanha-semijoia1/4.webp",
+              "alt": "campanha semijoia1 4"
+            },
+            {
+              "src": "fotos/campanhas/campanha-semijoia1/5.webp",
+              "alt": "campanha semijoia1 5"
+            },
+            {
+              "src": "fotos/campanhas/campanha-semijoia1/6.webp",
+              "alt": "campanha semijoia1 6"
+            },
+            {
+              "src": "fotos/campanhas/campanha-semijoia1/7.webp",
+              "alt": "campanha semijoia1 7"
+            }
+          ]
+        },
+        {
+          "key": "campanha-semijoia2",
+          "title": "Campanha Semijoia2",
+          "images": [
+            {
+              "src": "fotos/campanhas/campanha-semijoia2/1.webp",
+              "alt": "campanha semijoia2 1"
+            },
+            {
+              "src": "fotos/campanhas/campanha-semijoia2/2.webp",
+              "alt": "campanha semijoia2 2"
+            },
+            {
+              "src": "fotos/campanhas/campanha-semijoia2/3.webp",
+              "alt": "campanha semijoia2 3"
+            },
+            {
+              "src": "fotos/campanhas/campanha-semijoia2/4.webp",
+              "alt": "campanha semijoia2 4"
+            },
+            {
+              "src": "fotos/campanhas/campanha-semijoia2/5.webp",
+              "alt": "campanha semijoia2 5"
+            },
+            {
+              "src": "fotos/campanhas/campanha-semijoia2/6.webp",
+              "alt": "campanha semijoia2 6"
+            }
+          ]
+        },
+        {
+          "key": "campanha-semijoia3",
+          "title": "Campanha Semijoia3",
+          "images": [
+            {
+              "src": "fotos/campanhas/campanha-semijoia3/1.webp",
+              "alt": "campanha semijoia3 1"
+            },
+            {
+              "src": "fotos/campanhas/campanha-semijoia3/2.webp",
+              "alt": "campanha semijoia3 2"
+            },
+            {
+              "src": "fotos/campanhas/campanha-semijoia3/3.webp",
+              "alt": "campanha semijoia3 3"
+            },
+            {
+              "src": "fotos/campanhas/campanha-semijoia3/4.webp",
+              "alt": "campanha semijoia3 4"
+            },
+            {
+              "src": "fotos/campanhas/campanha-semijoia3/5.webp",
+              "alt": "campanha semijoia3 5"
+            },
+            {
+              "src": "fotos/campanhas/campanha-semijoia3/6.webp",
+              "alt": "campanha semijoia3 6"
+            },
+            {
+              "src": "fotos/campanhas/campanha-semijoia3/7.webp",
+              "alt": "campanha semijoia3 7"
+            }
+          ]
+        },
+        {
+          "key": "campanha-verao",
+          "title": "Campanha Verao",
+          "images": [
+            {
+              "src": "fotos/campanhas/campanha-verao/1.webp",
+              "alt": "campanha verao 1"
+            },
+            {
+              "src": "fotos/campanhas/campanha-verao/2.webp",
+              "alt": "campanha verao 2"
+            },
+            {
+              "src": "fotos/campanhas/campanha-verao/3.webp",
+              "alt": "campanha verao 3"
+            },
+            {
+              "src": "fotos/campanhas/campanha-verao/4.webp",
+              "alt": "campanha verao 4"
+            },
+            {
+              "src": "fotos/campanhas/campanha-verao/5.webp",
+              "alt": "campanha verao 5"
+            }
+          ]
+        },
+        {
+          "key": "campanha-verão-2",
+          "title": "Campanha VerãO 2",
+          "images": [
+            {
+              "src": "fotos/campanhas/campanha-verão-2/1.webp",
+              "alt": "campanha verão 2 1"
+            },
+            {
+              "src": "fotos/campanhas/campanha-verão-2/2.webp",
+              "alt": "campanha verão 2 2"
+            },
+            {
+              "src": "fotos/campanhas/campanha-verão-2/3.webp",
+              "alt": "campanha verão 2 3"
+            }
+          ]
+        },
+        {
+          "key": "campanha-verão-3",
+          "title": "Campanha VerãO 3",
+          "images": [
+            {
+              "src": "fotos/campanhas/campanha-verão-3/1.webp",
+              "alt": "campanha verão 3 1"
+            },
+            {
+              "src": "fotos/campanhas/campanha-verão-3/2.webp",
+              "alt": "campanha verão 3 2"
+            },
+            {
+              "src": "fotos/campanhas/campanha-verão-3/3.webp",
+              "alt": "campanha verão 3 3"
+            },
+            {
+              "src": "fotos/campanhas/campanha-verão-3/4.webp",
+              "alt": "campanha verão 3 4"
+            },
+            {
+              "src": "fotos/campanhas/campanha-verão-3/5.webp",
+              "alt": "campanha verão 3 5"
+            }
+          ]
+        },
+        {
+          "key": "campanha-verão-4",
+          "title": "Campanha VerãO 4",
+          "images": [
+            {
+              "src": "fotos/campanhas/campanha-verão-4/1.webp",
+              "alt": "campanha verão 4 1"
+            },
+            {
+              "src": "fotos/campanhas/campanha-verão-4/2.webp",
+              "alt": "campanha verão 4 2"
+            },
+            {
+              "src": "fotos/campanhas/campanha-verão-4/3.webp",
+              "alt": "campanha verão 4 3"
+            },
+            {
+              "src": "fotos/campanhas/campanha-verão-4/4.webp",
+              "alt": "campanha verão 4 4"
+            },
+            {
+              "src": "fotos/campanhas/campanha-verão-4/5.webp",
+              "alt": "campanha verão 4 5"
+            },
+            {
+              "src": "fotos/campanhas/campanha-verão-4/6.webp",
+              "alt": "campanha verão 4 6"
+            },
+            {
+              "src": "fotos/campanhas/campanha-verão-4/7.webp",
+              "alt": "campanha verão 4 7"
+            }
+          ]
+        },
+        {
+          "key": "campanha-verão-5",
+          "title": "Campanha VerãO 5",
+          "images": [
+            {
+              "src": "fotos/campanhas/campanha-verão-5/1.webp",
+              "alt": "campanha verão 5 1"
+            },
+            {
+              "src": "fotos/campanhas/campanha-verão-5/2.webp",
+              "alt": "campanha verão 5 2"
+            },
+            {
+              "src": "fotos/campanhas/campanha-verão-5/3.webp",
+              "alt": "campanha verão 5 3"
+            },
+            {
+              "src": "fotos/campanhas/campanha-verão-5/4.webp",
+              "alt": "campanha verão 5 4"
+            },
+            {
+              "src": "fotos/campanhas/campanha-verão-5/5.webp",
+              "alt": "campanha verão 5 5"
+            },
+            {
+              "src": "fotos/campanhas/campanha-verão-5/6.webp",
+              "alt": "campanha verão 5 6"
+            },
+            {
+              "src": "fotos/campanhas/campanha-verão-5/7.webp",
+              "alt": "campanha verão 5 7"
+            }
+          ]
+        },
+        {
+          "key": "campanha-verão-6",
+          "title": "Campanha VerãO 6",
+          "images": [
+            {
+              "src": "fotos/campanhas/campanha-verão-6/1.webp",
+              "alt": "campanha verão 6 1"
+            },
+            {
+              "src": "fotos/campanhas/campanha-verão-6/2.webp",
+              "alt": "campanha verão 6 2"
+            },
+            {
+              "src": "fotos/campanhas/campanha-verão-6/3.webp",
+              "alt": "campanha verão 6 3"
+            },
+            {
+              "src": "fotos/campanhas/campanha-verão-6/4.webp",
+              "alt": "campanha verão 6 4"
+            },
+            {
+              "src": "fotos/campanhas/campanha-verão-6/5.webp",
+              "alt": "campanha verão 6 5"
+            },
+            {
+              "src": "fotos/campanhas/campanha-verão-6/6.webp",
+              "alt": "campanha verão 6 6"
+            }
+          ]
+        },
+        {
+          "key": "criação-de-deseigner-4",
+          "title": "CriaçãO De Deseigner 4",
+          "images": [
+            {
+              "src": "fotos/campanhas/criação-de-deseigner-4/1.webp",
+              "alt": "criação de deseigner 4 1"
+            },
+            {
+              "src": "fotos/campanhas/criação-de-deseigner-4/2.webp",
+              "alt": "criação de deseigner 4 2"
+            },
+            {
+              "src": "fotos/campanhas/criação-de-deseigner-4/3.webp",
+              "alt": "criação de deseigner 4 3"
+            },
+            {
+              "src": "fotos/campanhas/criação-de-deseigner-4/4.webp",
+              "alt": "criação de deseigner 4 4"
+            },
+            {
+              "src": "fotos/campanhas/criação-de-deseigner-4/5.webp",
+              "alt": "criação de deseigner 4 5"
+            },
+            {
+              "src": "fotos/campanhas/criação-de-deseigner-4/6.webp",
+              "alt": "criação de deseigner 4 6"
+            },
+            {
+              "src": "fotos/campanhas/criação-de-deseigner-4/7.webp",
+              "alt": "criação de deseigner 4 7"
+            },
+            {
+              "src": "fotos/campanhas/criação-de-deseigner-4/8.webp",
+              "alt": "criação de deseigner 4 8"
+            }
+          ]
+        },
+        {
+          "key": "criação-de-designer",
+          "title": "CriaçãO De Designer",
+          "images": [
+            {
+              "src": "fotos/campanhas/criação-de-designer/1.webp",
+              "alt": "criação de designer 1"
+            },
+            {
+              "src": "fotos/campanhas/criação-de-designer/2.webp",
+              "alt": "criação de designer 2"
+            },
+            {
+              "src": "fotos/campanhas/criação-de-designer/3.webp",
+              "alt": "criação de designer 3"
+            },
+            {
+              "src": "fotos/campanhas/criação-de-designer/4.webp",
+              "alt": "criação de designer 4"
+            }
+          ]
+        },
+        {
+          "key": "criação-de-designer-1",
+          "title": "CriaçãO De Designer 1",
+          "images": [
+            {
+              "src": "fotos/campanhas/criação-de-designer-1/1.webp",
+              "alt": "criação de designer 1 1"
+            },
+            {
+              "src": "fotos/campanhas/criação-de-designer-1/2.webp",
+              "alt": "criação de designer 1 2"
+            },
+            {
+              "src": "fotos/campanhas/criação-de-designer-1/3.webp",
+              "alt": "criação de designer 1 3"
+            },
+            {
+              "src": "fotos/campanhas/criação-de-designer-1/4.webp",
+              "alt": "criação de designer 1 4"
+            }
+          ]
+        },
+        {
+          "key": "designer-criação-de-designer2",
+          "title": "Designer CriaçãO De Designer2",
+          "images": [
+            {
+              "src": "fotos/campanhas/designer-criação-de-designer2/1.webp",
+              "alt": "designer criação de designer2 1"
+            },
+            {
+              "src": "fotos/campanhas/designer-criação-de-designer2/2.webp",
+              "alt": "designer criação de designer2 2"
+            },
+            {
+              "src": "fotos/campanhas/designer-criação-de-designer2/3.webp",
+              "alt": "designer criação de designer2 3"
+            },
+            {
+              "src": "fotos/campanhas/designer-criação-de-designer2/4.webp",
+              "alt": "designer criação de designer2 4"
+            },
+            {
+              "src": "fotos/campanhas/designer-criação-de-designer2/5.webp",
+              "alt": "designer criação de designer2 5"
+            }
+          ]
+        },
+        {
+          "key": "dia-das-avós",
+          "title": "Dia Das AvóS",
+          "images": [
+            {
+              "src": "fotos/campanhas/dia-das-avós/mariahacessorios_1752851362_3679506375261896331_54727099_2.webp",
+              "alt": "dia das avós 1"
+            },
+            {
+              "src": "fotos/campanhas/dia-das-avós/mariahacessorios_1752851362_3679506375270273321_54727099_5.webp",
+              "alt": "dia das avós 2"
+            },
+            {
+              "src": "fotos/campanhas/dia-das-avós/mariahacessorios_1752851362_3679506375270428814_54727099_3.webp",
+              "alt": "dia das avós 3"
+            },
+            {
+              "src": "fotos/campanhas/dia-das-avós/mariahacessorios_1752851362_3679506375278602879_54727099_4.webp",
+              "alt": "dia das avós 4"
+            },
+            {
+              "src": "fotos/campanhas/dia-das-avós/mariahacessorios_1752851362_3679506375287222294_54727099_1.webp",
+              "alt": "dia das avós 5"
+            }
+          ]
+        },
+        {
+          "key": "dia-dos-namorados",
+          "title": "Dia Dos Namorados",
+          "images": [
+            {
+              "src": "fotos/campanhas/dia-dos-namorados/1.webp",
+              "alt": "dia dos namorados 1"
+            },
+            {
+              "src": "fotos/campanhas/dia-dos-namorados/2.webp",
+              "alt": "dia dos namorados 2"
+            },
+            {
+              "src": "fotos/campanhas/dia-dos-namorados/3.webp",
+              "alt": "dia dos namorados 3"
+            },
+            {
+              "src": "fotos/campanhas/dia-dos-namorados/5.webp",
+              "alt": "dia dos namorados 4"
+            },
+            {
+              "src": "fotos/campanhas/dia-dos-namorados/6.webp",
+              "alt": "dia dos namorados 5"
+            },
+            {
+              "src": "fotos/campanhas/dia-dos-namorados/7.webp",
+              "alt": "dia dos namorados 6"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": "still-produtos",
+      "title": "Still Produtos",
+      "carousels": [
+        {
+          "key": "campanha-aneis",
+          "title": "Campanha Aneis",
+          "images": [
+            {
+              "src": "fotos/still-produtos/campanha-aneis/1.webp",
+              "alt": "campanha aneis 1"
+            },
+            {
+              "src": "fotos/still-produtos/campanha-aneis/2.webp",
+              "alt": "campanha aneis 2"
+            },
+            {
+              "src": "fotos/still-produtos/campanha-aneis/3.webp",
+              "alt": "campanha aneis 3"
+            },
+            {
+              "src": "fotos/still-produtos/campanha-aneis/4.webp",
+              "alt": "campanha aneis 4"
+            },
+            {
+              "src": "fotos/still-produtos/campanha-aneis/5.webp",
+              "alt": "campanha aneis 5"
+            },
+            {
+              "src": "fotos/still-produtos/campanha-aneis/6.webp",
+              "alt": "campanha aneis 6"
+            },
+            {
+              "src": "fotos/still-produtos/campanha-aneis/7.webp",
+              "alt": "campanha aneis 7"
+            }
+          ]
+        },
+        {
+          "key": "campanha-aneis-1",
+          "title": "Campanha Aneis 1",
+          "images": [
+            {
+              "src": "fotos/still-produtos/campanha-aneis-1/1.webp",
+              "alt": "campanha aneis 1 1"
+            },
+            {
+              "src": "fotos/still-produtos/campanha-aneis-1/2.webp",
+              "alt": "campanha aneis 1 2"
+            },
+            {
+              "src": "fotos/still-produtos/campanha-aneis-1/3.webp",
+              "alt": "campanha aneis 1 3"
+            },
+            {
+              "src": "fotos/still-produtos/campanha-aneis-1/4.webp",
+              "alt": "campanha aneis 1 4"
+            },
+            {
+              "src": "fotos/still-produtos/campanha-aneis-1/5.webp",
+              "alt": "campanha aneis 1 5"
+            }
+          ]
+        },
+        {
+          "key": "campanha-dia-das-mães",
+          "title": "Campanha Dia Das MãEs",
+          "images": [
+            {
+              "src": "fotos/still-produtos/campanha-dia-das-mães/1.webp",
+              "alt": "campanha dia das mães 1"
+            },
+            {
+              "src": "fotos/still-produtos/campanha-dia-das-mães/2.webp",
+              "alt": "campanha dia das mães 2"
+            },
+            {
+              "src": "fotos/still-produtos/campanha-dia-das-mães/3.webp",
+              "alt": "campanha dia das mães 3"
+            },
+            {
+              "src": "fotos/still-produtos/campanha-dia-das-mães/4.webp",
+              "alt": "campanha dia das mães 4"
+            }
+          ]
+        },
+        {
+          "key": "campanha-dia-do-moissanite",
+          "title": "Campanha Dia Do Moissanite",
+          "images": [
+            {
+              "src": "fotos/still-produtos/campanha-dia-do-moissanite/1.webp",
+              "alt": "campanha dia do moissanite 1"
+            },
+            {
+              "src": "fotos/still-produtos/campanha-dia-do-moissanite/2.webp",
+              "alt": "campanha dia do moissanite 2"
+            },
+            {
+              "src": "fotos/still-produtos/campanha-dia-do-moissanite/3.webp",
+              "alt": "campanha dia do moissanite 3"
+            },
+            {
+              "src": "fotos/still-produtos/campanha-dia-do-moissanite/4.webp",
+              "alt": "campanha dia do moissanite 4"
+            }
+          ]
+        },
+        {
+          "key": "campanha-inverno",
+          "title": "Campanha Inverno",
+          "images": [
+            {
+              "src": "fotos/still-produtos/campanha-inverno/1.webp",
+              "alt": "campanha inverno 1"
+            },
+            {
+              "src": "fotos/still-produtos/campanha-inverno/2.webp",
+              "alt": "campanha inverno 2"
+            },
+            {
+              "src": "fotos/still-produtos/campanha-inverno/3.webp",
+              "alt": "campanha inverno 3"
+            },
+            {
+              "src": "fotos/still-produtos/campanha-inverno/4.webp",
+              "alt": "campanha inverno 4"
+            },
+            {
+              "src": "fotos/still-produtos/campanha-inverno/5.webp",
+              "alt": "campanha inverno 5"
+            },
+            {
+              "src": "fotos/still-produtos/campanha-inverno/6.webp",
+              "alt": "campanha inverno 6"
+            },
+            {
+              "src": "fotos/still-produtos/campanha-inverno/7.webp",
+              "alt": "campanha inverno 7"
+            },
+            {
+              "src": "fotos/still-produtos/campanha-inverno/8.webp",
+              "alt": "campanha inverno 8"
+            },
+            {
+              "src": "fotos/still-produtos/campanha-inverno/9.webp",
+              "alt": "campanha inverno 9"
+            },
+            {
+              "src": "fotos/still-produtos/campanha-inverno/91.webp",
+              "alt": "campanha inverno 10"
+            }
+          ]
+        },
+        {
+          "key": "campanha-prata925",
+          "title": "Campanha Prata925",
+          "images": [
+            {
+              "src": "fotos/still-produtos/campanha-prata925/1.webp",
+              "alt": "campanha prata925 1"
+            },
+            {
+              "src": "fotos/still-produtos/campanha-prata925/2.webp",
+              "alt": "campanha prata925 2"
+            },
+            {
+              "src": "fotos/still-produtos/campanha-prata925/3.webp",
+              "alt": "campanha prata925 3"
+            },
+            {
+              "src": "fotos/still-produtos/campanha-prata925/4.webp",
+              "alt": "campanha prata925 4"
+            },
+            {
+              "src": "fotos/still-produtos/campanha-prata925/5.webp",
+              "alt": "campanha prata925 5"
+            }
+          ]
+        },
+        {
+          "key": "campanha-verão-7",
+          "title": "Campanha VerãO 7",
+          "images": [
+            {
+              "src": "fotos/still-produtos/campanha-verão-7/1.webp",
+              "alt": "campanha verão 7 1"
+            },
+            {
+              "src": "fotos/still-produtos/campanha-verão-7/2.webp",
+              "alt": "campanha verão 7 2"
+            },
+            {
+              "src": "fotos/still-produtos/campanha-verão-7/3.webp",
+              "alt": "campanha verão 7 3"
+            },
+            {
+              "src": "fotos/still-produtos/campanha-verão-7/4.webp",
+              "alt": "campanha verão 7 4"
+            },
+            {
+              "src": "fotos/still-produtos/campanha-verão-7/5.webp",
+              "alt": "campanha verão 7 5"
+            },
+            {
+              "src": "fotos/still-produtos/campanha-verão-7/6.webp",
+              "alt": "campanha verão 7 6"
+            },
+            {
+              "src": "fotos/still-produtos/campanha-verão-7/7.webp",
+              "alt": "campanha verão 7 7"
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }

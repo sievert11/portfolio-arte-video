@@ -370,6 +370,36 @@
       font-family: 'Roboto', sans-serif;
     }
 
+    .photo-group {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .photo-group + .photo-group {
+      margin-top: 32px;
+    }
+
+    .photo-carousel-item {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      text-align: left;
+    }
+
+    .photo-carousel-title {
+      color: var(--nord6);
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .empty-state {
+      color: var(--nord4);
+      opacity: 0.8;
+      font-size: 0.95rem;
+      padding: 12px 0;
+    }
+
     /* -------------------------------------------------------------
        7. RODAPÉ
        ------------------------------------------------------------- */
@@ -432,20 +462,9 @@
             <!-- ÂNCORA 4: FOTOGRAFIA PUBLICIDADE -->
       <section id="ads-photo" class="portfolio-section">
         <h2>Fotografia para campanhas e publicidade</h2>
-        
-        <div class="insta-carousel" id="carousel-ads">
-          <div class="carousel-stage">
-            <button class="nav-btn prev" aria-label="Foto anterior">&#10094;</button>
-            <button class="nav-btn next" aria-label="Próxima foto">&#10095;</button>
-            
-            <div class="carousel-track" data-carousel-images="ads"></div>
-          </div>
-          
-          <div class="carousel-footer">
-            <div class="carousel-dots"></div>
-            <div class="carousel-counter">1 / 4</div>
-          </div>
-        </div>
+
+        <div class="photo-group" data-photo-group="campanhas"></div>
+        <div class="photo-group" data-photo-group="still-produtos"></div>
       </section>
     </main>
 
@@ -491,25 +510,78 @@
       }
     ];
 
-    const photoCarousels = [
-      {
-        selector: '[data-carousel-images="instagram"]',
-        images: [
-          'https://picsum.photos/650/650?random=10',
-          'https://picsum.photos/650/650?random=11',
-          'https://picsum.photos/650/650?random=12'
-        ]
-      },
-      {
-        selector: '[data-carousel-images="ads"]',
-        images: [
-          'https://picsum.photos/650/650?random=20',
-          'https://picsum.photos/650/650?random=21',
-          'https://picsum.photos/650/650?random=22',
-          'https://picsum.photos/650/650?random=23'
-        ]
-      }
+    const photoSectionSelectors = [
+      { section: 'campanhas', selector: '[data-photo-group="campanhas"]' },
+      { section: 'still-produtos', selector: '[data-photo-group="still-produtos"]' }
     ];
+
+    function createPhotoCarouselMarkup({ title, images }) {
+      const safeTitle = (title || 'Carrossel').replace(/"/g, '&quot;');
+      return `
+        <div class="photo-carousel-item">
+          <h3 class="photo-carousel-title">${safeTitle}</h3>
+          <div class="insta-carousel">
+            <div class="carousel-stage">
+              <button class="nav-btn prev" aria-label="Foto anterior">&#10094;</button>
+              <button class="nav-btn next" aria-label="Próxima foto">&#10095;</button>
+              <div class="carousel-track"></div>
+            </div>
+            <div class="carousel-footer">
+              <div class="carousel-dots"></div>
+              <div class="carousel-counter">1 / 1</div>
+            </div>
+          </div>
+        </div>`;
+    }
+
+    function renderPhotoSection(container, carousels = []) {
+      if (!carousels.length) {
+        container.innerHTML = '<p class="empty-state">Nenhum carrossel encontrado para esta seção.</p>';
+        return;
+      }
+
+      container.innerHTML = carousels.map(createPhotoCarouselMarkup).join('');
+
+      container.querySelectorAll('.photo-carousel-item').forEach((item, index) => {
+        const carouselEl = item.querySelector('.insta-carousel');
+        const track = carouselEl.querySelector('.carousel-track');
+        const carouselData = carousels[index];
+
+        track.innerHTML = (carouselData.images || []).map((image, imageIndex) => `
+          <div class="carousel-slide">
+            <img src="${image.src}" alt="${image.alt || `Imagem ${imageIndex + 1}`}" loading="lazy">
+          </div>
+        `).join('');
+
+        new InstaCarousel(carouselEl);
+      });
+    }
+
+    async function loadPhotoSections() {
+      try {
+        const response = await fetch('./data/photos.json', { cache: 'no-store' });
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+
+        const data = await response.json();
+        const groupedCarousels = data.photoCarousels || [];
+
+        photoSectionSelectors.forEach(({ section, selector }) => {
+          const container = document.querySelector(selector);
+          if (!container) return;
+
+          const sectionData = groupedCarousels.find((item) => item.section === section);
+          renderPhotoSection(container, sectionData?.carousels || []);
+        });
+      } catch (error) {
+        console.warn('Não foi possível carregar as fotos do arquivo de dados:', error);
+        photoSectionSelectors.forEach(({ selector }) => {
+          const container = document.querySelector(selector);
+          if (container) {
+            container.innerHTML = '<p class="empty-state">Não foi possível carregar os carrosséis de fotos.</p>';
+          }
+        });
+      }
+    }
 
     function createVideoCard(video) {
       const title = (video.title || 'Vídeo').replace(/"/g, '&quot;');
@@ -648,19 +720,7 @@
         }
       });
 
-      photoCarousels.forEach(({ selector, images }) => {
-        const track = document.querySelector(selector);
-        if (!track) return;
-
-        track.innerHTML = images.map((src, index) => `
-          <div class="carousel-slide">
-            <img src="${src}" alt="Imagem ${index + 1}">
-          </div>
-        `).join('');
-
-        const carouselEl = track.closest('.insta-carousel');
-        if (carouselEl) new InstaCarousel(carouselEl);
-      });
+      loadPhotoSections();
     });
   </script>
 </body>
