@@ -1,10 +1,10 @@
 # portfolio-arte-video
 
-Repositório para página minimalista com meu portfólio de fotografia, postagens criadas para clientes, além de vídeos tradicionais e vídeos totalmente criados com IA.
+Repositório para uma página minimalista com meu portfólio de fotografia, postagens criadas para clientes, além de vídeos tradicionais e vídeos totalmente criados com IA.
 
-Atualizada em julho de 2026.
+Atualizado em julho de 2026.
 
-Configuração da chave da YouTube Data API
+Configuração da chave da API do YouTube Data
 ----------------------------------------
 
 1. Crie um arquivo `config.js` a partir de `config.example.js`:
@@ -12,7 +12,7 @@ Configuração da chave da YouTube Data API
 	- Copie `config.example.js` para `config.js`.
 	- Substitua `SUA_CHAVE_AQUI` pela sua chave da YouTube Data API.
 
-2. Não envie `config.js` ao repositório. Ele já está listado em `.gitignore`.
+3. Não envie `config.js` ao repositório. Ele já está listado no `.gitignore`.
 
 3. Alternativa segura: proxy as chamadas à YouTube Data API pelo seu backend e mantenha a chave no servidor.
 
@@ -55,7 +55,7 @@ Adicionar novas fotos ao site
 npm run generate:fotos
 ```
 
-5. Commit as pastas de imagens e o arquivo `data/fotos.json`.
+5. Faça o commit das pastas de imagens e do arquivo `data/fotos.json`.
 
 O script cria `data/fotos.json` automaticamente a partir das pastas e imagens encontradas em `fotos/`. Cada subpasta vira um carrossel e as imagens recebem texto alternativo padrão no formato `nomedapasta 1`, `nomedapasta 2`, etc.
 

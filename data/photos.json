@@ -6,7 +6,7 @@
       "carousels": [
         {
           "key": "1-campanha-coleção-bolsas",
-          "title": "1 Campanha ColeçãO Bolsas",
+          "title": "Campanha coleção bolsas",
           "images": [
             {
               "src": "fotos/campanhas/1-campanha-coleção-bolsas/1.webp",
@@ -36,7 +36,7 @@
         },
         {
           "key": "2-campanha-inverno-2",
-          "title": "2 Campanha Inverno 2",
+          "title": "Campanha inverno",
           "images": [
             {
               "src": "fotos/campanhas/2-campanha-inverno-2/1.webp",
@@ -70,7 +70,7 @@
         },
         {
           "key": "3 - campanha-inverno1",
-          "title": "3 Campanha Inverno1",
+          "title": "Campanha inverno",
           "images": [
             {
               "src": "fotos/campanhas/3 - campanha-inverno1/1.webp",
@@ -100,7 +100,7 @@
         },
         {
           "key": "campanha-semijoia",
-          "title": "Campanha Semijoia",
+          "title": "Campanha semijoias",
           "images": [
             {
               "src": "fotos/campanhas/campanha-semijoia/1.webp",
@@ -126,7 +126,7 @@
         },
         {
           "key": "campanha-semijoia1",
-          "title": "Campanha Semijoia1",
+          "title": "Campanha semijoias",
           "images": [
             {
               "src": "fotos/campanhas/campanha-semijoia1/1.webp",
@@ -160,7 +160,7 @@
         },
         {
           "key": "campanha-semijoia2",
-          "title": "Campanha Semijoia2",
+          "title": "Campanha semijoias",
           "images": [
             {
               "src": "fotos/campanhas/campanha-semijoia2/1.webp",
@@ -190,7 +190,7 @@
         },
         {
           "key": "campanha-semijoia3",
-          "title": "Campanha Semijoia3",
+          "title": "Campanha semijoias",
           "images": [
             {
               "src": "fotos/campanhas/campanha-semijoia3/1.webp",
@@ -224,7 +224,7 @@
         },
         {
           "key": "campanha-verao",
-          "title": "Campanha Verao",
+          "title": "Campanha verão",
           "images": [
             {
               "src": "fotos/campanhas/campanha-verao/1.webp",
@@ -250,7 +250,7 @@
         },
         {
           "key": "campanha-verão-2",
-          "title": "Campanha VerãO 2",
+          "title": "Campanha verão",
           "images": [
             {
               "src": "fotos/campanhas/campanha-verão-2/1.webp",
@@ -268,7 +268,7 @@
         },
         {
           "key": "campanha-verão-3",
-          "title": "Campanha VerãO 3",
+          "title": "Campanha verão",
           "images": [
             {
               "src": "fotos/campanhas/campanha-verão-3/1.webp",
@@ -294,7 +294,7 @@
         },
         {
           "key": "campanha-verão-4",
-          "title": "Campanha VerãO 4",
+          "title": "Campanha verão",
           "images": [
             {
               "src": "fotos/campanhas/campanha-verão-4/1.webp",
@@ -328,7 +328,7 @@
         },
         {
           "key": "campanha-verão-5",
-          "title": "Campanha VerãO 5",
+          "title": "Campanha verão",
           "images": [
             {
               "src": "fotos/campanhas/campanha-verão-5/1.webp",
@@ -362,7 +362,7 @@
         },
         {
           "key": "campanha-verão-6",
-          "title": "Campanha VerãO 6",
+          "title": "Campanha verão",
           "images": [
             {
               "src": "fotos/campanhas/campanha-verão-6/1.webp",
@@ -392,7 +392,7 @@
         },
         {
           "key": "criação-de-deseigner-4",
-          "title": "CriaçãO De Deseigner 4",
+          "title": "Criação de designer",
           "images": [
             {
               "src": "fotos/campanhas/criação-de-deseigner-4/1.webp",
@@ -430,7 +430,7 @@
         },
         {
           "key": "criação-de-designer",
-          "title": "CriaçãO De Designer",
+          "title": "Criação de designer",
           "images": [
             {
               "src": "fotos/campanhas/criação-de-designer/1.webp",
@@ -452,7 +452,7 @@
         },
         {
           "key": "criação-de-designer-1",
-          "title": "CriaçãO De Designer 1",
+          "title": "Criação de designer",
           "images": [
             {
               "src": "fotos/campanhas/criação-de-designer-1/1.webp",
@@ -474,7 +474,7 @@
         },
         {
           "key": "designer-criação-de-designer2",
-          "title": "Designer CriaçãO De Designer2",
+          "title": "Designer: criação de designer",
           "images": [
             {
               "src": "fotos/campanhas/designer-criação-de-designer2/1.webp",
@@ -500,7 +500,7 @@
         },
         {
           "key": "dia-das-avós",
-          "title": "Dia Das AvóS",
+          "title": "Dia das avós",
           "images": [
             {
               "src": "fotos/campanhas/dia-das-avós/mariahacessorios_1752851362_3679506375261896331_54727099_2.webp",
@@ -526,7 +526,7 @@
         },
         {
           "key": "dia-dos-namorados",
-          "title": "Dia Dos Namorados",
+          "title": "Dia dos namorados",
           "images": [
             {
               "src": "fotos/campanhas/dia-dos-namorados/1.webp",
@@ -558,11 +558,11 @@
     },
     {
       "section": "still-produtos",
-      "title": "Still Produtos",
+      "title": "Still Products",
       "carousels": [
         {
           "key": "campanha-aneis",
-          "title": "Campanha Aneis",
+          "title": "Campanha anéis",
           "images": [
             {
               "src": "fotos/still-produtos/campanha-aneis/1.webp",
@@ -596,7 +596,7 @@
         },
         {
           "key": "campanha-aneis-1",
-          "title": "Campanha Aneis 1",
+          "title": "Campanha anéis",
           "images": [
             {
               "src": "fotos/still-produtos/campanha-aneis-1/1.webp",
@@ -622,7 +622,7 @@
         },
         {
           "key": "campanha-dia-das-mães",
-          "title": "Campanha Dia Das MãEs",
+          "title": "Campanha dia das mães",
           "images": [
             {
               "src": "fotos/still-produtos/campanha-dia-das-mães/1.webp",
@@ -644,7 +644,7 @@
         },
         {
           "key": "campanha-dia-do-moissanite",
-          "title": "Campanha Dia Do Moissanite",
+          "title": "Campanha dia do moissanite",
           "images": [
             {
               "src": "fotos/still-produtos/campanha-dia-do-moissanite/1.webp",
@@ -666,7 +666,7 @@
         },
         {
           "key": "campanha-inverno",
-          "title": "Campanha Inverno",
+          "title": "Campanha inverno",
           "images": [
             {
               "src": "fotos/still-produtos/campanha-inverno/1.webp",
@@ -712,7 +712,7 @@
         },
         {
           "key": "campanha-prata925",
-          "title": "Campanha Prata925",
+          "title": "Campanha prata 925",
           "images": [
             {
               "src": "fotos/still-produtos/campanha-prata925/1.webp",
@@ -738,7 +738,7 @@
         },
         {
           "key": "campanha-verão-7",
-          "title": "Campanha VerãO 7",
+          "title": "Campanha verão",
           "images": [
             {
               "src": "fotos/still-produtos/campanha-verão-7/1.webp",
