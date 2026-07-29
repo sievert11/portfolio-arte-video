@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark light">
   <title>Portfólio | Daniel Sievert - Criação Audiovisual</title>
 
   <!-- Google Fonts: Fira Sans (Títulos) & Roboto (Texto) -->
@@ -15,11 +16,15 @@
        1. NORD PALETTE & VARIÁVEIS
        ------------------------------------------------------------- */
     :root {
+      color-scheme: dark light;
+
       /* Polar Night */
       --nord0: #2e3440;
       --nord1: #3b4252;
       --nord2: #434c5e;
       --nord3: #4c566a;
+      --site-max-width: 650px;
+      --content-gap: 18px;
       
       /* Snow Storm */
       --nord4: #d8dee9;
@@ -34,6 +39,59 @@
 
       /* Aurora */
       --nord14: #a3be8c; /* Verde para destaques / WhatsApp */
+
+      --surface-bg: rgba(46, 52, 64, 0.96);
+      --surface-border: var(--nord2);
+      --surface-shadow: rgba(0, 0, 0, 0.15);
+      --card-bg: var(--nord1);
+      --card-bg-alt: var(--nord0);
+      --text-primary: var(--nord4);
+      --text-secondary: var(--nord8);
+      --text-heading: var(--nord5);
+      --text-muted: var(--nord3);
+      --accent: var(--nord8);
+      --accent-strong: var(--nord10);
+      --button-bg: rgba(163, 190, 140, 0.12);
+      --button-border: rgba(163, 190, 140, 0.3);
+      --button-hover: var(--nord14);
+      --link-color: var(--nord9);
+      --nav-hover-bg: var(--nord2);
+      --divider-color: var(--nord3);
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --nord0: #f3f3f3;
+        --nord1: #ffffff;
+        --nord2: #e5e5e5;
+        --nord3: #cfcfcf;
+        --nord4: #1f1f1f;
+        --nord5: #262626;
+        --nord6: #333333;
+        --nord7: #007acc;
+        --nord8: #005999;
+        --nord9: #1f4e79;
+        --nord10: #0d6efd;
+        --nord14: #2b7a0b;
+
+        --surface-bg: rgba(255, 255, 255, 0.96);
+        --surface-border: #d4d4d4;
+        --surface-shadow: rgba(15, 23, 42, 0.08);
+        --card-bg: #ffffff;
+        --card-bg-alt: #f8f8f8;
+        --text-primary: #1f1f1f;
+        --text-secondary: #005999;
+        --text-heading: #1f1f1f;
+        --text-muted: #616161;
+        --accent: #007acc;
+        --accent-strong: #005999;
+        --button-bg: rgba(0, 122, 204, 0.12);
+        --button-border: rgba(0, 122, 204, 0.25);
+        --button-hover: #007acc;
+        --link-color: #005999;
+        --nav-hover-bg: #e5e5e5;
+        --divider-color: #d4d4d4;
+      }
     }
 
     * {
@@ -49,7 +107,7 @@
 
     body {
       background-color: var(--nord0);
-      color: var(--nord4);
+      color: var(--text-primary);
       font-family: 'Roboto', sans-serif;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
@@ -57,7 +115,7 @@
 
     /* Container Centralizado - Máximo 650px */
     .site-wrapper {
-      max-width: 650px;
+      max-width: var(--site-max-width);
       margin: 0 auto;
       padding: 120px 20px 80px 20px;
       text-align: center;
@@ -76,11 +134,11 @@
       top: 0;
       left: 0;
       width: 100%;
-      background-color: rgba(46, 52, 64, 0.96);
-      border-bottom: 1px solid var(--nord2);
+      background-color: var(--surface-bg);
+      border-bottom: 1px solid var(--surface-border);
       z-index: 999;
       padding: 8px 20px 8px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 8px 20px var(--surface-shadow);
     }
 
     .header-content {
@@ -106,7 +164,7 @@
     }
 
     .subtitle {
-      color: var(--nord8);
+      color: var(--text-secondary);
       font-family: 'Roboto', sans-serif;
       font-size: 0.95rem;
       font-weight: 400;
@@ -132,9 +190,9 @@
       align-items: center;
       justify-content: center;
       gap: 10px;
-      background-color: rgba(163, 190, 140, 0.12);
-      color: var(--nord14);
-      border: 1px solid rgba(163, 190, 140, 0.3);
+      background-color: var(--button-bg);
+      color: var(--accent);
+      border: 1px solid var(--button-border);
       padding: 8px 16px;
       border-radius: 30px;
       text-decoration: none;
@@ -146,9 +204,9 @@
     }
 
     .whatsapp-link:hover {
-      background-color: var(--nord14);
+      background-color: var(--button-hover);
       color: var(--nord0);
-      border-color: var(--nord14);
+      border-color: var(--button-hover);
       transform: translateY(-2px);
       box-shadow: 0 4px 15px rgba(163, 190, 140, 0.2);
     }
@@ -176,7 +234,7 @@
     }
 
     .anchor-nav a {
-      color: var(--nord9);
+      color: var(--link-color);
       text-decoration: none;
       font-family: 'Fira Sans', sans-serif;
       font-size: 0.95rem;
@@ -189,8 +247,8 @@
 
     .anchor-nav a:hover,
     .anchor-nav a:focus-visible {
-      color: var(--nord6);
-      background-color: var(--nord2);
+      color: var(--text-heading);
+      background-color: var(--nav-hover-bg);
     }
 
     /* -------------------------------------------------------------
@@ -203,7 +261,7 @@
     }
 
     section.portfolio-section h2 {
-      color: var(--nord5);
+      color: var(--text-heading);
       font-size: 1.35rem;
       font-weight: 600;
       margin-bottom: 28px;
@@ -229,8 +287,8 @@
        ------------------------------------------------------------- */
     .shorts-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--content-gap);
     }
 
     @media (max-width: 520px) {
@@ -243,11 +301,11 @@
       position: relative;
       width: 100%;
       padding-top: 177.77%; /* Proporção 9:16 */
-      background-color: var(--nord1);
+      background-color: var(--card-bg);
       border-radius: 14px;
       overflow: hidden;
-      border: 1px solid var(--nord2);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      border: 1px solid var(--surface-border);
+      box-shadow: 0 8px 20px var(--surface-shadow);
     }
 
     .short-card iframe {
@@ -265,18 +323,18 @@
     .insta-carousel {
       position: relative;
       width: 100%;
-      background-color: var(--nord1);
+      background-color: var(--card-bg);
       border-radius: 16px;
-      border: 1px solid var(--nord2);
+      border: 1px solid var(--surface-border);
       overflow: hidden;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      box-shadow: 0 10px 25px var(--surface-shadow);
       user-select: none;
     }
 
     .carousel-stage {
       position: relative;
       width: 100%;
-      aspect-ratio: 1 / 1; /* Proporção quadrada do Instagram */
+      aspect-ratio: 0.8 / 1; /* Proporção vertical mais próxima de uma foto retrato */
       background-color: var(--nord0);
       overflow: hidden;
     }
@@ -341,8 +399,8 @@
       align-items: center;
       justify-content: space-between;
       padding: 12px 18px;
-      background-color: var(--nord1);
-      border-top: 1px solid rgba(67, 76, 94, 0.5);
+      background-color: var(--card-bg);
+      border-top: 1px solid var(--surface-border);
     }
 
     .carousel-dots {
@@ -371,9 +429,10 @@
     }
 
     .photo-group {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--content-gap);
+      align-items: start;
     }
 
     .photo-group + .photo-group {
@@ -385,10 +444,13 @@
       flex-direction: column;
       gap: 12px;
       text-align: left;
+      width: 100%;
+      max-width: calc((var(--site-max-width) - var(--content-gap)) / 2);
+      margin: 0 auto;
     }
 
     .photo-carousel-title {
-      color: var(--nord6);
+      color: var(--text-heading);
       font-size: 1rem;
       font-weight: 600;
     }
@@ -398,6 +460,16 @@
       opacity: 0.8;
       font-size: 0.95rem;
       padding: 12px 0;
+    }
+
+    @media (max-width: 520px) {
+      .photo-group {
+        grid-template-columns: 1fr;
+      }
+
+      .photo-carousel-item {
+        max-width: 100%;
+      }
     }
 
     /* -------------------------------------------------------------
@@ -411,7 +483,7 @@
 
     .copyright {
       font-size: 0.82rem;
-      color: var(--nord3);
+      color: var(--text-muted);
       margin-top: 16px;
     }
   </style>
