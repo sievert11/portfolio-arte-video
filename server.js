@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 const axios = require('axios');
 const cors = require('cors');
 require('dotenv').config();
@@ -12,7 +13,11 @@ if (!YT_KEY) {
 }
 
 app.use(cors());
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname)));
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'));
+});
 
 app.get('/api/playlistItems', async (req, res) => {
   const { playlistId, maxResults = 20 } = req.query;

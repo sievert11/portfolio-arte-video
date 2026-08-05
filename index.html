@@ -315,6 +315,41 @@
       width: 100%;
       height: 100%;
       border: none;
+      background-color: var(--nord0);
+    }
+
+    .video-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      color: var(--nord6);
+      background: linear-gradient(135deg, rgba(46, 52, 64, 0.96), rgba(59, 66, 82, 0.86));
+      cursor: pointer;
+      text-align: center;
+      padding: 16px;
+    }
+
+    .video-play-indicator {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 1.4rem;
+      background-color: rgba(129, 161, 193, 0.95);
+      color: var(--nord0);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+    }
+
+    .video-placeholder span:last-child {
+      font-size: 0.9rem;
+      opacity: 0.9;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
     }
 
     /* -------------------------------------------------------------
@@ -357,6 +392,12 @@
       height: 100%;
       object-fit: cover;
       display: block;
+      background-color: var(--nord0);
+      transition: filter 0.2s ease;
+    }
+
+    .carousel-slide img[data-src] {
+      filter: blur(6px);
     }
 
     /* Botões de Navegação Overlay */
@@ -606,6 +647,35 @@
         </div>`;
     }
 
+    function loadImage(img) {
+      if (!img || !img.dataset.src || img.dataset.loaded === 'true') return;
+
+      img.src = img.dataset.src;
+      img.dataset.loaded = 'true';
+      img.removeAttribute('data-src');
+    }
+
+    function observeCarouselImages(carouselEl) {
+      if (!carouselEl || !('IntersectionObserver' in window)) {
+        carouselEl?.querySelectorAll('.carousel-slide img[data-src]').forEach((img) => loadImage(img));
+        return;
+      }
+
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const firstSlides = carouselEl.querySelectorAll('.carousel-slide img[data-src]');
+            firstSlides.forEach((img, index) => {
+              if (index < 2) loadImage(img);
+            });
+            obs.disconnect();
+          }
+        });
+      }, { rootMargin: '220px 0px' });
+
+      observer.observe(carouselEl);
+    }
+
     function renderPhotoSection(container, carousels = []) {
       if (!carousels.length) {
         container.innerHTML = '<p class="empty-state">Nenhum carrossel encontrado para esta seção.</p>';
@@ -621,17 +691,19 @@
 
         track.innerHTML = (carouselData.images || []).map((image, imageIndex) => `
           <div class="carousel-slide">
-            <img src="${image.src}" alt="${image.alt || `Imagem ${imageIndex + 1}`}" loading="lazy">
+            <img data-src="${image.src}" alt="${image.alt || `Imagem ${imageIndex + 1}`}" loading="lazy" decoding="async">
           </div>
         `).join('');
 
-        new InstaCarousel(carouselEl);
+        const carouselInstance = new InstaCarousel(carouselEl);
+        carouselEl.__instaCarousel = carouselInstance;
+        observeCarouselImages(carouselEl);
       });
     }
 
     async function loadPhotoSections() {
       try {
-        const response = await fetch('./data/photos.json', { cache: 'no-store' });
+        const response = await fetch('./data/photos.json', { cache: 'force-cache' });
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
 
         const data = await response.json();
@@ -659,8 +731,48 @@
       const title = (video.title || 'Vídeo').replace(/"/g, '&quot;');
       return `
         <div class="short-card">
-          <iframe src="https://www.youtube.com/embed/${video.id}" title="${title}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <div class="video-placeholder" data-video-id="${video.id}" data-title="${title}">
+            <span class="video-play-indicator">▶</span>
+            <span>Carregar vídeo</span>
+          </div>
         </div>`;
+    }
+
+    function loadVideoCard(card) {
+      if (!card || card.dataset.loaded === 'true') return;
+
+      const placeholder = card.querySelector('.video-placeholder');
+      if (!placeholder) return;
+
+      const iframe = document.createElement('iframe');
+      iframe.src = `https://www.youtube.com/embed/${placeholder.dataset.videoId}?rel=0`;
+      iframe.title = placeholder.dataset.title || 'Vídeo';
+      iframe.loading = 'lazy';
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+      iframe.allowFullscreen = true;
+      card.replaceChild(iframe, placeholder);
+      card.dataset.loaded = 'true';
+    }
+
+    function observeVideoCards(container) {
+      const cards = container.querySelectorAll('.short-card');
+      if (!cards.length) return;
+
+      if (!('IntersectionObserver' in window)) {
+        cards.forEach((card) => loadVideoCard(card));
+        return;
+      }
+
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            loadVideoCard(entry.target);
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { rootMargin: '220px 0px' });
+
+      cards.forEach((card) => observer.observe(card));
     }
 
     function renderVideoGrid(container, videos) {
@@ -670,12 +782,13 @@
       }
 
       container.innerHTML = videos.map(createVideoCard).join('');
+      observeVideoCards(container);
     }
 
     async function loadPlaylistVideos(container, sectionKey, fallbackVideos = [], playlistId = '') {
       // Modo estático: carregar apenas o arquivo local `data/videos.json`.
       try {
-        const response = await fetch('./data/videos.json', { cache: 'no-store' });
+        const response = await fetch('./data/videos.json', { cache: 'force-cache' });
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
 
         const data = await response.json();
@@ -731,6 +844,20 @@
         }
       }
 
+      loadVisibleSlides() {
+        const slideElements = this.container.querySelectorAll('.carousel-slide');
+
+        slideElements.forEach((slide, index) => {
+          const img = slide.querySelector('img[data-src]');
+          if (!img) return;
+
+          const shouldLoad = index === this.currentIndex || index === this.currentIndex + 1 || index === this.currentIndex - 1;
+          if (shouldLoad) {
+            loadImage(img);
+          }
+        });
+      }
+
       update() {
         this.track.style.transform = `translateX(-${this.currentIndex * 100}%)`;
         this.prevBtn.disabled = this.currentIndex === 0;
@@ -742,6 +869,7 @@
         });
 
         this.counter.textContent = `${this.currentIndex + 1} / ${this.totalSlides}`;
+        this.loadVisibleSlides();
       }
 
       next() {
