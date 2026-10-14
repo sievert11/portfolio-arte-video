@@ -1,6 +1,6 @@
 # portfolio-arte-video
 
-Repositório para uma página minimalista com meu portfólio de fotografia, postagens criadas para clientes, além de vídeos tradicionais e vídeos totalmente criados com IA.
+Repositório do portfólio de Daniel Sievert, com trabalhos de vídeo, fotografia e uma página preparada para textos autorais.
 
 Atualizado em julho de 2026.
 

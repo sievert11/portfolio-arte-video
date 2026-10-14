@@ -9,7 +9,6 @@ if (!YT_KEY) {
 }
 
 const playlists = [
-  { key: 'ia-videos', playlistId: 'PLU-9-ADIACSk' },
   { key: 'client-videos', playlistId: 'PLdlVx0DQvv9E' },
 ];
 
